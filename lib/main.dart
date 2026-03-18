@@ -17,6 +17,11 @@ class MyApp extends StatelessWidget {
   }
 
   final GoRouter _router = GoRouter(
-    routes: [GoRoute(path: '/', builder: (context, state) => HomePage())],
+    routes: [
+      GoRoute(
+        path: '/',
+        builder: (context, state) => HomePage(),
+      ),
+    ],
   );
 }
