@@ -1,3 +1,4 @@
+import 'package:astra_property/pages/detail_prop.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +22,13 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/',
         builder: (context, state) => HomePage(),
+      ),
+      GoRoute(
+        path: '/property/:propId',
+        builder: (context, state) {
+          final propId = state.pathParameters['propId']!;
+          return DetailProp(propertyId: propId);
+        },
       ),
     ],
   );

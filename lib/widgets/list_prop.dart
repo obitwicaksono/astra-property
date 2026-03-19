@@ -3,7 +3,12 @@ import 'package:astra_property/models/list_property.dart';
 
 class ListProp extends StatelessWidget {
   final ListPropertyModel list;
-  const ListProp({super.key, required this.list});
+  final VoidCallback? onTap;
+  const ListProp({
+    super.key,
+    required this.list,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,7 @@ class ListProp extends StatelessWidget {
       title: Text(list.cluster),
       subtitle: Text(list.tipe),
       trailing: Text(list.harga),
-      onTap: () {},
+      onTap: onTap,
     );
   }
 }

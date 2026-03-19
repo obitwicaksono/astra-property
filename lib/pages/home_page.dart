@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:astra_property/models/list_property.dart';
 import 'package:astra_property/widgets/list_prop.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -42,6 +43,9 @@ class HomePage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ListProp(
                       list: listProperty[index],
+                      onTap: () => context.go(
+                        '/property/${listProperty[index].id}',
+                      ),
                     );
                   },
                 ),
